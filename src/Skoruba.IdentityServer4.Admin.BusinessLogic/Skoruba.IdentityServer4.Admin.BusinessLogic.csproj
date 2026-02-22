@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Description>Business Logic layer for the administration of the IdentityServer4</Description>
+    <TargetFramework>net8.0</TargetFramework>
+    <Description>Business Logic layer for the administration of the IdentityServer4</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,8 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared.csproj" />
-    <ProjectReference Include="..\Skoruba.IdentityServer4.Admin.EntityFramework\Skoruba.IdentityServer4.Admin.EntityFramework.csproj" />
+    <ProjectReference
+      Include="..\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared.csproj" />
+    <ProjectReference
+      Include="..\Skoruba.IdentityServer4.Admin.EntityFramework\Skoruba.IdentityServer4.Admin.EntityFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

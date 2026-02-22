@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,11 +16,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\Skoruba.IdentityServer4.STS.Identity\Skoruba.IdentityServer4.STS.Identity.csproj" />
+		<ProjectReference
+			Include="..\..\src\Skoruba.IdentityServer4.STS.Identity\Skoruba.IdentityServer4.STS.Identity.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Update="FluentAssertions" Version="6.4.0" />
+		<PackageReference Update="FluentAssertions" Version="6.4.0" />
 	</ItemGroup>
 
 </Project>

@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Description>Business Logic layer for the administration of the Asp.Net Core Identity and IdentityServer4</Description>
+    <TargetFramework>net8.0</TargetFramework>
+    <Description>Business Logic layer for the administration of the Asp.Net Core Identity and
+      IdentityServer4</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,8 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared.csproj" />
-    <ProjectReference Include="..\Skoruba.IdentityServer4.Admin.EntityFramework.Identity\Skoruba.IdentityServer4.Admin.EntityFramework.Identity.csproj" />
+    <ProjectReference
+      Include="..\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared\Skoruba.IdentityServer4.Admin.BusinessLogic.Shared.csproj" />
+    <ProjectReference
+      Include="..\Skoruba.IdentityServer4.Admin.EntityFramework.Identity\Skoruba.IdentityServer4.Admin.EntityFramework.Identity.csproj" />
   </ItemGroup>
 
   <ItemGroup>

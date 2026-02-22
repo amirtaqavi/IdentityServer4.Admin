@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Description>Entity Framework layer for the administration of the IdentityServer4 and Asp.Net Core Identity with MySql support</Description>
+    <TargetFramework>net8.0</TargetFramework>
+    <Description>Entity Framework layer for the administration of the IdentityServer4 and Asp.Net
+      Core Identity with MySql support</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,15 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SkorubaIdentityServer4Admin.Admin.EntityFramework.Shared\SkorubaIdentityServer4Admin.Admin.EntityFramework.Shared.csproj" />
+    <ProjectReference
+      Include="..\SkorubaIdentityServer4Admin.Admin.EntityFramework.Shared\SkorubaIdentityServer4Admin.Admin.EntityFramework.Shared.csproj" />
   </ItemGroup>
 
 </Project>
-
-
-
-
-
-
-
-
