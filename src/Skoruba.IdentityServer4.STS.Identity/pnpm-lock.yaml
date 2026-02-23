@@ -17,12 +17,12 @@ importers:
       bootstrap:
         specifier: ^5.3.8
         version: 5.3.8(@popperjs/core@2.11.8)
-      bootstrap-datepicker:
-        specifier: 1.9.0
-        version: 1.9.0
       bootswatch:
         specifier: 4.5.3
         version: 4.5.3
+      cookieconsent:
+        specifier: ^3.1.1
+        version: 3.1.1
       font-awesome:
         specifier: ^4.7.0
         version: 4.7.0
@@ -38,27 +38,12 @@ importers:
       jquery-validation-unobtrusive:
         specifier: ^4.0.0
         version: 4.0.0
-      knockout:
-        specifier: ^3.5.1
-        version: 3.5.1
-      moment:
-        specifier: ^2.30.1
-        version: 2.30.1
-      moment-timezone:
-        specifier: ^0.6.0
-        version: 0.6.0
       open-iconic:
         specifier: ^1.1.1
         version: 1.1.1
-      tempusdominus-bootstrap-4:
-        specifier: ^5.39.2
-        version: 5.39.2(bootstrap@5.3.8(@popperjs/core@2.11.8))(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1)(popper.js@1.16.1)(tempusdominus-core@5.19.3(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1))
-      tempusdominus-core:
-        specifier: ^5.19.3
-        version: 5.19.3(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1)
-      toastr:
-        specifier: ^2.1.4
-        version: 2.1.4
+      sass:
+        specifier: ^1.97.3
+        version: 1.97.3
     devDependencies:
       del:
         specifier: ^8.0.1
@@ -78,9 +63,6 @@ importers:
       gulp-uglify:
         specifier: ^3.0.2
         version: 3.0.2
-      sass:
-        specifier: ^1.97.3
-        version: 1.97.3
 
 packages:
 
@@ -277,9 +259,6 @@ packages:
   bl@5.1.0:
     resolution: {integrity: sha512-tv1ZJHLfTDnXE6tMHv73YgSJaWR2AFuPwMntBe7XL/GBFHnT0CLnsHMogfk5+GzCDC5ZWarSCYaIGATZt9dNsQ==}
 
-  bootstrap-datepicker@1.9.0:
-    resolution: {integrity: sha512-9rYYbaVOheGYxjOr/+bJCmRPihfy+LkLSg4fIFMT9Od8WwWB/MB50w0JO1eBgKUMbb7PFHQD5uAfI3ArAxZRXA==}
-
   bootstrap@5.3.8:
     resolution: {integrity: sha512-HP1SZDqaLDPwsNiqRqi5NcP0SSXciX2s9E+RyqJIIqGo+vJeN5AJVM98CXmW/Wux0nQ5L7jeWUdplCEf0Ee+tg==}
     peerDependencies:
@@ -340,6 +319,9 @@ packages:
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
+
+  cookieconsent@3.1.1:
+    resolution: {integrity: sha512-v8JWLJcI7Zs9NWrs8hiVldVtm3EBF70TJI231vxn6YToBGj0c9dvdnYwltydkAnrbBMOM/qX1xLFrnTfm5wTag==}
 
   copy-props@4.0.0:
     resolution: {integrity: sha512-bVWtw1wQLzzKiYROtvNlbJgxgBYt2bMJpkCbKmXM3xyijvcjjWXEk5nyrrT3bgJ7ODb19ZohE2T0Y3FgNPyoTw==}
@@ -649,17 +631,11 @@ packages:
     peerDependencies:
       jquery: ^1.7 || ^2.0 || ^3.1 || ^4.0
 
-  jquery@3.5.1:
-    resolution: {integrity: sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==}
-
   jquery@3.7.1:
     resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
 
   jquery@4.0.0:
     resolution: {integrity: sha512-TXCHVR3Lb6TZdtw1l3RTLf8RBWVGexdxL6AC8/e0xZKEpBflBsjh9/8LXw+dkNFuOyW9B7iB3O1sP7hS0Kiacg==}
-
-  knockout@3.5.1:
-    resolution: {integrity: sha512-wRJ9I4az0QcsH7A4v4l0enUpkS++MBx0BnL/68KaLzJg7x1qmbjSlwEoCNol7KTYZ+pmtI7Eh2J0Nu6/2Z5J/Q==}
 
   last-run@2.0.0:
     resolution: {integrity: sha512-j+y6WhTLN4Itnf9j5ZQos1BGPCS8DAwmgMroR3OzfxAsBxam0hMw7J8M3KqZl0pLQJ1jNnwIexg5DYpC/ctwEQ==}
@@ -693,12 +669,6 @@ packages:
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
-
-  moment-timezone@0.6.0:
-    resolution: {integrity: sha512-ldA5lRNm3iJCWZcBCab4pnNL3HSZYXVb/3TYr75/1WCTWYuTqYUb5f/S384pncYjJ88lbO8Z4uPDvmoluHJc8Q==}
-
-  moment@2.30.1:
-    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
 
   mute-stdout@2.0.0:
     resolution: {integrity: sha512-32GSKM3Wyc8dg/p39lWPKYu8zci9mJFzV1Np9Of0ZEpe6Fhssn/FbI7ywAMd40uX+p3ZKh3T5EeCFv81qS3HmQ==}
@@ -770,10 +740,6 @@ packages:
   plugin-error@1.0.1:
     resolution: {integrity: sha512-L1zP0dk7vGweZME2i+EeakvUNqSrdiI3F91TwEoYiGrAfUXmVv6fJIq4g82PAXxNsWOp0J7ZqQy/3Szz0ajTxA==}
     engines: {node: '>= 0.10'}
-
-  popper.js@1.16.1:
-    resolution: {integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==}
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
 
   presentable-error@0.0.1:
     resolution: {integrity: sha512-E6rsNU1QNJgB3sjj7OANinGncFKuK+164sLXw1/CqBjj/EkXSoSdHCtWQGBNlREIGLnL7IEUEGa08YFVUbrhVg==}
@@ -926,23 +892,6 @@ packages:
   teex@1.0.1:
     resolution: {integrity: sha512-eYE6iEI62Ni1H8oIa7KlDU6uQBtqr4Eajni3wX7rpfXD8ysFx8z0+dri+KWEPWpBsxXfxu58x/0jvTVT1ekOSg==}
 
-  tempusdominus-bootstrap-4@5.39.2:
-    resolution: {integrity: sha512-8Au4miSAsMGdsElPg87EUmsN7aGJFaRA5Y8Ale7dDTfhhnQL1Za53LclIJkq+t/7NO5+Ufr1jY7tmEPvWGHaVg==}
-    peerDependencies:
-      bootstrap: '>=4.5.2'
-      jquery: ^3.5.1
-      moment: ^2.29.0
-      moment-timezone: ^0.5.31
-      popper.js: ^1.16.1
-      tempusdominus-core: 5.19.3
-
-  tempusdominus-core@5.19.3:
-    resolution: {integrity: sha512-WXBVXcBG/hErB6u9gdUs+vzANvCU1kd1ykzL4kolPB3h1OEv20OKUW5qz1iynxyqRFPa1NWY9gwRu5d+MjXEuQ==}
-    peerDependencies:
-      jquery: ^3.0
-      moment: ^2.29.2
-      moment-timezone: ^0.5.0
-
   text-decoder@1.2.7:
     resolution: {integrity: sha512-vlLytXkeP4xvEq2otHeJfSQIRyWxo/oZGEbXrtEEF9Hnmrdly59sUbzZ/QgyWuLYHctCHxFF4tRQZNQ9k60ExQ==}
 
@@ -959,9 +908,6 @@ packages:
   to-through@3.0.0:
     resolution: {integrity: sha512-y8MN937s/HVhEoBU1SxfHC+wxCHkV1a9gW8eAdTadYh/bGyesZIVcbjI+mSpFbSVwQici/XjBjuUyri1dnXwBw==}
     engines: {node: '>=10.13.0'}
-
-  toastr@2.1.4:
-    resolution: {integrity: sha512-LIy77F5n+sz4tefMmFOntcJ6HL0Fv3k1TDnNmFZ0bU/GcvIIfy6eG2v7zQmMiYgaalAiUv75ttFrPn5s0gyqlA==}
 
   uglify-js@3.19.3:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
@@ -1187,10 +1133,6 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  bootstrap-datepicker@1.9.0:
-    dependencies:
-      jquery: 3.5.1
-
   bootstrap@5.3.8(@popperjs/core@2.11.8):
     dependencies:
       '@popperjs/core': 2.11.8
@@ -1260,6 +1202,8 @@ snapshots:
       source-map: 0.6.1
 
   convert-source-map@2.0.0: {}
+
+  cookieconsent@3.1.1: {}
 
   copy-props@4.0.0:
     dependencies:
@@ -1607,13 +1551,9 @@ snapshots:
     dependencies:
       jquery: 4.0.0
 
-  jquery@3.5.1: {}
-
   jquery@3.7.1: {}
 
   jquery@4.0.0: {}
-
-  knockout@3.5.1: {}
 
   last-run@2.0.0: {}
 
@@ -1645,12 +1585,6 @@ snapshots:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
-
-  moment-timezone@0.6.0:
-    dependencies:
-      moment: 2.30.1
-
-  moment@2.30.1: {}
 
   mute-stdout@2.0.0: {}
 
@@ -1713,8 +1647,6 @@ snapshots:
       arr-diff: 4.0.0
       arr-union: 3.1.0
       extend-shallow: 3.0.2
-
-  popper.js@1.16.1: {}
 
   presentable-error@0.0.1: {}
 
@@ -1865,21 +1797,6 @@ snapshots:
       - bare-abort-controller
       - react-native-b4a
 
-  tempusdominus-bootstrap-4@5.39.2(bootstrap@5.3.8(@popperjs/core@2.11.8))(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1)(popper.js@1.16.1)(tempusdominus-core@5.19.3(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1)):
-    dependencies:
-      bootstrap: 5.3.8(@popperjs/core@2.11.8)
-      jquery: 4.0.0
-      moment: 2.30.1
-      moment-timezone: 0.6.0
-      popper.js: 1.16.1
-      tempusdominus-core: 5.19.3(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1)
-
-  tempusdominus-core@5.19.3(jquery@4.0.0)(moment-timezone@0.6.0)(moment@2.30.1):
-    dependencies:
-      jquery: 4.0.0
-      moment: 2.30.1
-      moment-timezone: 0.6.0
-
   text-decoder@1.2.7:
     dependencies:
       b4a: 1.8.0
@@ -1905,10 +1822,6 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
-
-  toastr@2.1.4:
-    dependencies:
-      jquery: 4.0.0
 
   uglify-js@3.19.3: {}
 

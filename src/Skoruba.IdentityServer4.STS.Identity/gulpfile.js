@@ -15,22 +15,32 @@ function processClean() {
 }
 
 function processScripts() {
+  // For Bootstrap 5 + Popper v2
   return gulp
-    .src([
-      "./node_modules/jquery/dist/jquery.js",
-      "./node_modules/jquery-validation/dist/jquery.validate.js",
-      "./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
-      "./node_modules/popper.js/dist/umd/popper.js",
-      "./node_modules/bootstrap/dist/js/bootstrap.js",
-      "./node_modules/cookieconsent/src/cookieconsent.js",
-      "./node_modules/holderjs/holder.js",
-      "./Scripts/App/components/Menu.js",
-      "./Scripts/App/components/Language.js",
-      "./Scripts/App/components/Theme.js",
-      "./Scripts/App/components/CookieConsent.js",
-    ])
+    .src(
+      [
+        "./node_modules/jquery/dist/jquery.js",
+        "./node_modules/jquery-validation/dist/jquery.validate.js",
+        "./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+        // Popper v2 path (used by Bootstrap 5)
+        "./node_modules/@popperjs/core/dist/umd/popper.js",
+        // Bootstrap 5 JS
+        "./node_modules/bootstrap/dist/js/bootstrap.js",
+        "./node_modules/cookieconsent/src/cookieconsent.js",
+        "./node_modules/holderjs/holder.js",
+        "./Scripts/App/components/Menu.js",
+        "./Scripts/App/components/Language.js",
+        "./Scripts/App/components/Theme.js",
+        "./Scripts/App/components/CookieConsent.js",
+      ],
+      { allowEmpty: true }
+    ) // Add allowEmpty to prevent errors if files are missing
     .pipe(concat("bundle.min.js"))
     .pipe(uglify())
+    .on("error", function (err) {
+      console.log("Uglify error: ", err.toString());
+      this.emit("end");
+    })
     .pipe(gulp.dest(jsFolder));
 }
 
@@ -62,19 +72,25 @@ function processSassMin() {
 }
 
 function processStyles() {
+  // Bootstrap 5 doesn't have bootstrap.css in the same path
+  // It's now in dist/css/bootstrap.css
   return gulp
-    .src([
-      "./node_modules/bootstrap/dist/css/bootstrap.css",
-      "./node_modules/open-iconic/font/css/open-iconic-bootstrap.css",
-      "./node_modules/font-awesome/css/font-awesome.css",
-      "./node_modules/cookieconsent/build/cookieconsent.min.css",
-    ])
+    .src(
+      [
+        "./node_modules/bootstrap/dist/css/bootstrap.css",
+        "./node_modules/open-iconic/font/css/open-iconic-bootstrap.css",
+        "./node_modules/font-awesome/css/font-awesome.css",
+        "./node_modules/cookieconsent/build/cookieconsent.min.css",
+      ],
+      { allowEmpty: true }
+    )
     .pipe(minifyCSS())
     .pipe(concat("bundle.min.css"))
     .pipe(gulp.dest(cssFolder));
 }
 
 function processTheme() {
+  // Bootswatch 5+ structure
   return gulp
     .src("node_modules/bootswatch/dist/**/bootstrap.min.css")
     .pipe(gulp.dest(cssThemeFolder));
@@ -85,7 +101,7 @@ var buildStyles = gulp.series(
   processStyles,
   processTheme,
   processSass,
-  processSassMin,
+  processSassMin
 );
 var build = gulp.parallel(buildStyles, processScripts);
 

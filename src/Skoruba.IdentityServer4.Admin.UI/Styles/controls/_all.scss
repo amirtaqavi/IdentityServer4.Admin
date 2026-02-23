@@ -1,7 +1,7 @@
 ﻿/*Controls*/
-@use "navbar.scss";
-@use "validation.summary.scss";
-@use "checkbox.scss";
-@use "picker.scss";
-@use "toastr.scss";
-@use "radio.scss";
+@forward "navbar.scss";
+@forward "validation.summary.scss";
+@forward "checkbox.scss";
+@forward "picker.scss";
+@forward "toastr.scss";
+@forward "radio.scss";

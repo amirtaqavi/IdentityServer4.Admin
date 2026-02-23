@@ -1,3 +1,3 @@
-﻿@use "common/all.scss";
-@use "controls/all.scss";
-@use "pages/all.scss";
+﻿@use "common/all.scss" as *;
+@use "controls/all.scss" as *;
+@use "pages/all.scss" as *;

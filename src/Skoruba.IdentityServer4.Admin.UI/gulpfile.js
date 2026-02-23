@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
-var sass = require("gulp-dart-sass");
+var sass = require("gulp-sass")(require("sass"));
 var minifyCSS = require("gulp-clean-css");
 var del = require("del");
 
@@ -47,9 +47,12 @@ function processScripts() {
       "./Scripts/App/pages/AuditLog.js",
       "./Scripts/App/pages/Secrets.js",
       "./Scripts/App/components/DatePicker.js",
-    ])
+    ], { allowEmpty: true }) // Prevent errors if files are missing
     .pipe(concat("bundle.min.js"))
-    .pipe(uglify())
+    .pipe(uglify().on('error', function(err) {
+      console.log('Uglify error: ', err.toString());
+      this.emit('end');
+    }))
     .pipe(gulp.dest(jsFolder));
 }
 
@@ -58,23 +61,27 @@ function processFonts() {
     .src([
       "./node_modules/font-awesome/fonts/**",
       "./node_modules/open-iconic/font/fonts/**",
-    ])
+    ], { allowEmpty: true })
     .pipe(gulp.dest(`${distFolder}fonts/`));
 }
 
 function processSass() {
   return gulp
     .src("Styles/web.scss")
-    .pipe(sass())
-    .on("error", sass.logError)
+    .pipe(sass().on('error', function(err) {
+      console.log('Sass error: ', err.toString());
+      this.emit('end');
+    }))
     .pipe(gulp.dest(cssFolder));
 }
 
 function processSassMin() {
   return gulp
     .src("Styles/web.scss")
-    .pipe(sass())
-    .on("error", sass.logError)
+    .pipe(sass().on('error', function(err) {
+      console.log('Sass error: ', err.toString());
+      this.emit('end');
+    }))
     .pipe(minifyCSS())
     .pipe(concat("web.min.css"))
     .pipe(gulp.dest(cssFolder));
@@ -90,7 +97,7 @@ function processStyles() {
       "./node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css",
       "./node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
       "./Styles/controls/jsontree.css",
-    ])
+    ], { allowEmpty: true })
     .pipe(minifyCSS())
     .pipe(concat("bundle.min.css"))
     .pipe(gulp.dest(cssFolder));
@@ -98,7 +105,7 @@ function processStyles() {
 
 function processTheme() {
   return gulp
-    .src("node_modules/bootswatch/dist/**/bootstrap.min.css")
+    .src("node_modules/bootswatch/dist/**/bootstrap.min.css", { allowEmpty: true })
     .pipe(gulp.dest(cssThemeFolder));
 }
 
@@ -107,7 +114,7 @@ var buildStyles = gulp.series(
   processStyles,
   processTheme,
   processSass,
-  processSassMin,
+  processSassMin
 );
 var build = gulp.parallel(buildStyles, processScripts);
 

@@ -1,6 +1,6 @@
 ﻿/*Common*/
-@use "fonts.scss";
-@use "common.scss";
-@use "margin.scss";
-@use "padding.scss";
-@use "form.scss";
+@forward "fonts.scss";
+@forward "common.scss";
+@forward "margin.scss";
+@forward "padding.scss";
+@forward "form.scss";
