@@ -1,4 +1,8 @@
 
+using Aerospike.Client;
+using Microsoft.Extensions.Logging;
+using Skoruba.IdentityServer4.Admin.AeroSpike.Repositories.Interfaces;
+
 namespace Skoruba.IdentityServer4.Admin.AeroSpike.Repositories;
 
 public class AeroSpikeRepository<T> : IAeroSpikeRepository<T> where T : class, new()

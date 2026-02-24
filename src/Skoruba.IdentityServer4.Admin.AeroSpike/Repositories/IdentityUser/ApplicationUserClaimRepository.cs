@@ -5,8 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Aerospike.Client;
 using Microsoft.Extensions.Options;
-using Xanis.DependancyInjection.Extenstions.Aerospike.Model;
-using Xanis.Idp.Models.AspNetIdentity.IdentityUser;
+using Skoruba.IdentityServer4.Admin.AeroSpike.Models.AspNetIdentity.IdentityUser;
+using Skoruba.IdentityServer4.Admin.AeroSpike.Repositories.IdentityUser.Interfaces;
+using Skoruba.IdentityServer4.Admin.AeroSpike.Repositories.Interfaces;
 
 namespace Skoruba.IdentityServer4.Admin.AeroSpike.Repositories.IdentityUser
 {

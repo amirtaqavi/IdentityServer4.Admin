@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace Skoruba.IdentityServer4.Admin.AeroSpike.Repositories.ApplicationRoles.Interfaces
 {
     public interface IApplicationRoleRepository
